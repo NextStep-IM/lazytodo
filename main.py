@@ -1,11 +1,11 @@
 from pathlib import Path
-from platform import platform
+from platform import system
 import sys
 
 # Constants
 # TODO: Check if these costants can be set only at first run
 HOME = Path.home()
-OS = platform()
+OS = system()
 FILE_NAME = "data.txt"
 if OS == "Windows":
     DATA_FILE = HOME / "AppData" / "Local" / "lazytodo" / FILE_NAME
