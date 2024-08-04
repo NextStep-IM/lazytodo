@@ -36,7 +36,11 @@ def writeToDataFile():
     Dirs = input("Paths: ").strip().split()
     with open(DATA_FILE, "a") as f:
         for dir in Dirs:
+    for dir in Dirs:
+        if dir.exists():
             f.write(f"{dir}\n")
+        else:
+            print(f"\"{dir}\" does not exist. Skipping.")
 
 
 if __name__ == "__main__":
