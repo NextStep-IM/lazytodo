@@ -27,7 +27,7 @@ def main():
         except FileExistsError:
             pass
         print(
-            "Welcome to lazytodo!\nPlease enter directory paths (separated by space) which will be searched:\n"
+            "Welcome to lazytodo!\nPlease enter directory paths (separated by space and inside quotations) which will be searched (e.g, /opt/example_dir or C:\\Users\\Documents\\):\n"
         )
         writeToDataFile()
 
