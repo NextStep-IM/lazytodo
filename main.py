@@ -22,6 +22,10 @@ else:
 
 def main():
     if not DATA_FILE.exists():
+        try:
+            Path.mkdir(FILE_DIR, parents=True)  # Creates FILE_DIR and missing parents
+        except FileExistsError:
+            pass
         print(
             "Welcome to lazytodo!\nPlease enter directory paths (separated by space) which will be searched:\n"
         )
