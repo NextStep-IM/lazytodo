@@ -43,5 +43,19 @@ def writeToDataFile():
             print(f"\"{dir}\" does not exist. Skipping.")
 
 
+def menu():
+    print("1- Display todo list")
+    print("2- Add directories")
+    print("3- Exit")
+    while True:
+        try:
+            choice = int(input("Enter (1/2): ").strip())
+        except ValueError:
+            continue
+        else:
+            break
+    return choice
+
+
 if __name__ == "__main__":
     main()
