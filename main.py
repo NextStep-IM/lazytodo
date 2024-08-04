@@ -16,7 +16,18 @@ else:
 
 
 def main():
-    
+    if not DATA_FILE.exists():
+        print(
+            "Welcome to lazytodo!\nPlease enter directory paths (separated by space) which will be searched:\n"
+        )
+        writeToDataFile()
+
+def writeToDataFile():
+    Dirs = input("Paths: ").strip().split()
+    with open(DATA_FILE, "a") as f:
+        for dir in Dirs:
+            f.write(f"{dir}\n")
+
 
 if __name__ == "__main__":
     main()
