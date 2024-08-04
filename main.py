@@ -6,11 +6,16 @@ import sys
 # TODO: Check if these costants can be set only at first run
 HOME = Path.home()
 OS = system()
+FILE_DIR_NAME = "lazytodo"
 FILE_NAME = "data.txt"
+WINDOWS_LOC = HOME / "AppData" / "Local"
+LINUX_LOC = HOME / ".local" / "share"
 if OS == "Windows":
-    DATA_FILE = HOME / "AppData" / "Local" / "lazytodo" / FILE_NAME
+    DATA_FILE = WINDOWS_LOC / FILE_DIR_NAME / FILE_NAME
+    FILE_DIR = WINDOWS_LOC / FILE_DIR_NAME
 elif OS == "Linux":
-    DATA_FILE = HOME / ".local" / "share" / "lazytodo" / FILE_NAME
+    DATA_FILE = LINUX_LOC / FILE_DIR_NAME / FILE_NAME
+    FILE_DIR = LINUX_LOC / FILE_DIR_NAME
 else:
     sys.exit(f"{OS} is not supported. Exiting program.")
 
