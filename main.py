@@ -31,6 +31,7 @@ def main():
         )
         writeToDataFile()
 
+# Write target Dirs to DATA_FILE
 def writeToDataFile():
     Dirs = input("Paths: ").strip().split()
     with open(DATA_FILE, "a") as f:
